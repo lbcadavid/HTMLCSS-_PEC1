@@ -1,0 +1,201 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  font-family: $font-family-sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: $uoc-corporate;
+  background-color: $uoc-bg;
+}
+
+.uoc-container {
+  max-width: 800px;
+  padding: 2rem;
+  margin: auto;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 2rem;
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -1px rgb(0 0 0 / 0.06);
+}
+
+.uoc-logo {
+  display: block;
+  max-width: 200px;
+  height: auto;
+  margin-right: auto;
+  margin-bottom: 1.5rem;
+  margin-left: auto;
+
+  @media (min-width: $mqMinWidth) {
+    max-width: none;
+  }
+}
+
+.uoc-title {
+  font-family: $font-family-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: $uoc-corporate;
+
+  @media (min-width: $mqMinWidth) {
+    font-size: 36px;
+  }
+}
+
+.uoc-footer {
+  margin-top: 1.5rem;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+/*
+* Estilos del Menu
+*/
+.site-name {
+  margin-right: auto;
+  font-family: $font-main;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: $primary-color;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 8vw;
+  background-color: $background-color;
+
+  .menu-left {
+    flex: 1;
+    padding: 1vw 0;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .menu-right {
+    display: flex;
+    align-items: center;
+
+    ul {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+
+      a {
+        font-size: 16px;
+        font-weight: bold;
+        color: $secondary-color;
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: $primary-color;
+      }
+    }
+
+    .menu-icon {
+      display: none;
+      color: $menu-color;
+      cursor: pointer;
+    }
+  }
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  height: auto;
+  margin-top: 6vw;
+  background-color: $background-color;
+  transition: left 0.3s ease-in-out;
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  ul {
+    width: 100%;
+    padding: 0;
+    list-style: none;
+
+    li {
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    hr {
+      width: 100%;
+      border: none;
+      border-top: 1px solid $menu-color;
+    }
+  }
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  a {
+    font-weight: bold;
+    color: $menu-color;
+    text-decoration: none;
+  }
+
+  &.active {
+    left: 0;
+  }
+}
+
+@media (max-width: $tablet) {
+  nav {
+    .menu-right {
+      .menu-list {
+        display: none;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+    }
+  }
+}
+
+/*
+* Estilos Main 
+*/
+main {
+  section {
+    width: 98vw;
+    padding: 0 17vw;
+
+    @media (max-width: $desktop) {
+      padding: 6vw 8vw;
+    }
+
+    @media (max-width: $tablet) {
+      padding: 8vw;
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  h2 {
+    font-size: 30px !important;
+  }
+
+  p {
+    font-size: 14px !important;
+  }
+}

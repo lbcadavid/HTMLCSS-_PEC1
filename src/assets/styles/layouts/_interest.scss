@@ -1,0 +1,78 @@
+/* stylelint-disable selector-max-class */
+/*
+* Seccion 3: Puntos de interest
+*/
+
+.interest {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 3vw;
+
+  h2 {
+    margin-bottom: 32px;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  p {
+    text-align: justify;
+  }
+
+  .punto {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: flex-start;
+
+    &.left {
+      @include side-align(left);
+    }
+
+    &.right {
+      @include side-align(right);
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    h4 {
+      margin: 8px 0;
+      font-size: 16px;
+      color: gray;
+    }
+
+    .content {
+      flex: 1;
+    }
+
+    .image {
+      order: 0;
+      width: 40%;
+      height: auto;
+      margin-top: 60px;
+    }
+  }
+
+  @media (max-width: $desktop) {
+    .punto {
+      .image {
+        order: 0;
+        width: 100%;
+        margin-top: 0;
+      }
+
+      &.left {
+        flex-direction: column;
+      }
+
+      &.right {
+        flex-direction: column;
+      }
+    }
+  }
+}

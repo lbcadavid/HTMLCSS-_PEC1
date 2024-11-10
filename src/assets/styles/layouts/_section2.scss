@@ -1,0 +1,51 @@
+/*
+* Seccion 2: Intro
+*/
+.descripcion {
+  padding-top: 3vw;
+  padding-bottom: 2vw;
+
+  h2 {
+    margin-bottom: 32px;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  p {
+    margin-bottom: 16px;
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: justify;
+  }
+
+  .image-container {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+
+    .text {
+      width: 65%;
+    }
+
+    .image {
+      width: 35%;
+      height: auto;
+    }
+  }
+
+  @media (max-width: $desktop) {
+    .image-container {
+      flex-direction: column;
+      .text {
+        width: 100%;
+        margin-bottom: 16px;
+      }
+
+      .image {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
